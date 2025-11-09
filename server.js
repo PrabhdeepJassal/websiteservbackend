@@ -14,12 +14,18 @@ app.use(express.urlencoded({ extended: true }));
 
 // Create email transporter
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
+  host: "smtp.gmail.com",
+  port: 587,             // ✅ Use 587 instead of 465
+  secure: false,         // ✅ STARTTLS instead of SSL
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false // ✅ Prevents TLS block inside Render
+  },
 });
+
 
 
 // NEW SIMPLIFIED ENDPOINT - Only sends auto-response
