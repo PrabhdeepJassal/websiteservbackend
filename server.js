@@ -24,7 +24,8 @@ app.post("/api/send-autoresponse", async (req, res) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                from: "Prabhdeep Singh <noreply@yourdomain.com>",
+                from: "Prabhdeep Singh <noreply@prabhdeep.on.resend.dev>",
+
                 to: email,
                 subject: `Thank you for reaching out, ${name}!`,
                 html: `
