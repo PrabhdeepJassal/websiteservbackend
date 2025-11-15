@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+console.log("Resend Key Loaded:", process.env.RESEND_API_KEY ? "Yes" : "No");
 
 const app = express();
 app.use(cors());
